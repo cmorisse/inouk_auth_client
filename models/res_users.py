@@ -20,11 +20,11 @@ from requests_hawk import HawkAuth
 
 _logger = getLogger(__name__)
 
-INOUK_AUTH_SERVER = os.environ['INOUK_AUTH_SERVER']
-INOUK_AUTH_SERVER_HAWK_ID = os.environ['INOUK_AUTH_SERVER_HAWK_ID']
-INOUK_AUTH_SERVER_HAWK_SECRET = os.environ['INOUK_AUTH_SERVER_HAWK_SECRET']
-INOUK_AUTH_TIMEOUT = int(os.environ['INOUK_AUTH_TIMEOUT'])
-INOUK_RESOURCE_KEY = os.environ['INOUK_RESOURCE_KEY']
+INOUK_AUTH_SERVER = os.environ.get('INOUK_AUTH_SERVER')
+INOUK_AUTH_SERVER_HAWK_ID = os.environ.get('INOUK_AUTH_SERVER_HAWK_ID')
+INOUK_AUTH_SERVER_HAWK_SECRET = os.environ.get('INOUK_AUTH_SERVER_HAWK_SECRET')
+INOUK_AUTH_TIMEOUT = int(os.environ.get('INOUK_AUTH_TIMEOUT', '0'))
+INOUK_RESOURCE_KEY = os.environ.get('INOUK_RESOURCE_KEY')
 
 
 class ISAResUsers(models.Model):
